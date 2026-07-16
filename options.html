@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PinsPad Settings</title>
+  <style>
+    body {
+      font: 15px/1.45 "Segoe UI", system-ui, sans-serif;
+      max-width: 480px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      color: #161a18;
+      background: #eef2ef;
+    }
+    h1 {
+      font-family: Georgia, serif;
+      color: #143d34;
+      font-size: 1.8rem;
+    }
+    label { display: grid; gap: 0.35rem; margin-bottom: 0.9rem; }
+    input, button {
+      font: inherit;
+      padding: 0.6rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #c9d2cc;
+    }
+    button {
+      background: #1f5c4d;
+      color: #f5faf8;
+      border-color: #143d34;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    #status { margin-top: 0.75rem; }
+    .ok { color: #1f5c4d; }
+    .err { color: #a33b2d; }
+    .hint { color: #6b756f; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>PinsPad</h1>
+  <p class="hint">
+    Create an API token in PinsPad → Settings, then paste it here.
+    The extension connects to <code>pinspad.com</code>.
+  </p>
+  <form id="optionsForm">
+    <label>
+      API token
+      <input type="password" id="token" required placeholder="pp_…" autocomplete="off">
+    </label>
+    <div class="row">
+      <button type="submit">Save</button>
+      <button type="button" id="testBtn">Test connection</button>
+    </div>
+    <p id="status"></p>
+  </form>
+  <script src="config.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

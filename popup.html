@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PinsPad</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <strong class="brand">PinsPad</strong>
+    <a href="options.html" target="_blank" class="link">Settings</a>
+  </header>
+  <form id="saveForm">
+    <label>
+      Title
+      <input type="text" id="title" required>
+    </label>
+    <label>
+      URL
+      <input type="url" id="url" required>
+    </label>
+    <label>
+      Category
+      <select id="category"></select>
+    </label>
+    <label>
+      Note
+      <textarea id="note" rows="2" placeholder="Optional"></textarea>
+    </label>
+    <button type="submit" id="saveBtn">Save</button>
+    <p id="msg" class="msg" hidden></p>
+  </form>
+  <script src="config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

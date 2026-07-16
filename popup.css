@@ -1,0 +1,76 @@
+:root {
+  --ink: #161a18;
+  --brand: #1f5c4d;
+  --line: #c9d2cc;
+  --paper: #f7faf8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  width: 320px;
+  font: 14px/1.4 "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  padding: 12px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.brand {
+  font-family: Georgia, "Iowan Old Style", serif;
+  font-size: 1.25rem;
+  color: #143d34;
+}
+
+.link {
+  color: var(--brand);
+  font-size: 0.85rem;
+}
+
+form {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  display: grid;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: #3a433e;
+}
+
+input, select, textarea, button {
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+  background: #fff;
+}
+
+button {
+  background: var(--brand);
+  color: #f5faf8;
+  border-color: #143d34;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.msg {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.msg.ok { color: var(--brand); }
+.msg.err { color: #a33b2d; }
