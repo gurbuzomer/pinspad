@@ -7,31 +7,59 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <header>
+  <section id="loading" class="loading">
     <strong class="brand">PinsPad</strong>
-    <a href="options.html" target="_blank" class="link">Settings</a>
-  </header>
-  <form id="saveForm">
-    <label>
-      Title
-      <input type="text" id="title" required>
-    </label>
-    <label>
-      URL
-      <input type="url" id="url" required>
-    </label>
-    <label>
-      Category
-      <select id="category"></select>
-    </label>
-    <label>
-      Note
-      <textarea id="note" rows="2" placeholder="Optional"></textarea>
-    </label>
-    <button type="submit" id="saveBtn">Save</button>
-    <p id="msg" class="msg" hidden></p>
-  </form>
+    <p class="loading-text">Checking connection…</p>
+  </section>
+
+  <section id="setupGate" class="setup" hidden>
+    <strong class="brand">PinsPad</strong>
+    <p id="setupText" class="setup-text"></p>
+    <div class="setup-actions">
+      <a href="options.html" target="_blank" class="btn-settings">Open Settings</a>
+      <a
+        href="https://pinspad.com/"
+        data-pinspad-dashboard
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-dashboard"
+      >Open Dashboard</a>
+    </div>
+  </section>
+
+  <div id="appMain" hidden>
+    <header>
+      <strong class="brand">PinsPad</strong>
+      <div class="header-links">
+        <a data-pinspad-dashboard target="_blank" rel="noopener noreferrer" class="link">Dashboard</a>
+        <a href="import.html" target="_blank" class="link">Import</a>
+        <a href="options.html" target="_blank" class="link">Settings</a>
+      </div>
+    </header>
+    <form id="saveForm">
+      <label>
+        Title
+        <input type="text" id="title" required>
+      </label>
+      <label>
+        URL
+        <input type="url" id="url" required>
+      </label>
+      <label>
+        Category
+        <select id="category"></select>
+      </label>
+      <label>
+        Note
+        <textarea id="note" rows="2" placeholder="Optional"></textarea>
+      </label>
+      <button type="submit" id="saveBtn">Save</button>
+      <p id="msg" class="msg" hidden></p>
+    </form>
+  </div>
+
   <script src="config.js"></script>
+  <script src="api-client.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

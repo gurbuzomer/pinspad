@@ -29,9 +29,18 @@ header {
   color: #143d34;
 }
 
+.header-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+  max-width: 62%;
+}
+
 .link {
   color: var(--brand);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
 }
 
 form {
@@ -74,3 +83,62 @@ button:disabled {
 
 .msg.ok { color: var(--brand); }
 .msg.err { color: #a33b2d; }
+
+.loading,
+.setup {
+  display: grid;
+  gap: 12px;
+}
+
+.loading-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6b756f;
+}
+
+.setup-text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #3a433e;
+}
+
+.setup-actions {
+  display: grid;
+  gap: 8px;
+}
+
+.btn-settings,
+.btn-dashboard {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.btn-settings {
+  border: 1px solid #143d34;
+  background: var(--brand);
+  color: #f5faf8;
+}
+
+.btn-settings:hover {
+  filter: brightness(1.05);
+}
+
+.btn-dashboard {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #143d34;
+}
+
+.btn-dashboard:hover {
+  background: #f0f4f1;
+}
+
+[hidden] {
+  display: none !important;
+}

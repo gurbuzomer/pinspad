@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PinsPad</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <section id="loading" class="loading">
+    <strong class="brand">PinsPad</strong>
+    <p class="loading-text">Checking connection…</p>
+  </section>
+
+  <section id="setupGate" class="setup" hidden>
+    <strong class="brand">PinsPad</strong>
+    <p id="setupText" class="setup-text"></p>
+    <div class="setup-actions">
+      <a href="options.html" target="_blank" class="btn-settings">Open Settings</a>
+      <button type="button" class="btn-dashboard" id="btnRefreshSetup">Refresh connection</button>
+      <a
+        href="https://pinspad.com/"
+        data-pinspad-dashboard
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-dashboard"
+      >Open Dashboard</a>
+    </div>
+  </section>
+
+  <div id="appMain" class="app" hidden>
+    <header>
+      <strong class="brand">PinsPad</strong>
+      <div class="header-links">
+        <a data-pinspad-dashboard target="_blank" rel="noopener noreferrer" class="link">Dashboard</a>
+        <a href="import.html" target="_blank" class="link">Import</a>
+        <a href="options.html" target="_blank" class="link">Settings</a>
+      </div>
+    </header>
+
+    <section class="save-block">
+      <h2 class="section-title">Quick save</h2>
+      <form id="saveForm">
+        <label>
+          Title
+          <input type="text" id="title" required>
+        </label>
+        <label>
+          URL
+          <input type="url" id="url" required>
+        </label>
+        <label>
+          Save to category
+          <select id="saveCategory"></select>
+        </label>
+        <label>
+          Note
+          <textarea id="note" rows="2" placeholder="Optional"></textarea>
+        </label>
+        <button type="submit" id="saveBtn">Save tab</button>
+        <p id="msg" class="msg" hidden></p>
+      </form>
+    </section>
+
+    <section class="pins-block">
+      <div class="pins-head">
+        <h2 class="section-title">Most visited</h2>
+        <p id="pinsStatus" class="pins-status" hidden></p>
+      </div>
+      <ul id="pinList" class="pin-list" aria-label="Pins"></ul>
+      <p id="pinsEmpty" class="pins-empty" hidden>No pins in this view.</p>
+    </section>
+
+    <footer class="list-footer">
+      <label class="list-filter">
+        Browse category
+        <select id="listCategory"></select>
+      </label>
+    </footer>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="api-client.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

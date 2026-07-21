@@ -1,0 +1,287 @@
+:root {
+  --ink: #161a18;
+  --brand: #1f5c4d;
+  --line: #c9d2cc;
+  --paper: #f7faf8;
+  --muted: #6b756f;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font: 14px/1.4 "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 12px 12px 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.brand {
+  font-family: Georgia, "Iowan Old Style", serif;
+  font-size: 1.25rem;
+  color: #143d34;
+}
+
+.header-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+  max-width: 62%;
+}
+
+.link {
+  color: var(--brand);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.section-title {
+  margin: 0 0 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.save-block {
+  flex-shrink: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+form {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  display: grid;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: #3a433e;
+}
+
+input, select, textarea, button {
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+  background: #fff;
+}
+
+button {
+  background: var(--brand);
+  color: #f5faf8;
+  border-color: #143d34;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.msg {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.msg.ok { color: var(--brand); }
+.msg.err { color: #a33b2d; }
+
+.pins-block {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0 8px;
+}
+
+.pins-head {
+  flex-shrink: 0;
+}
+
+.pins-status {
+  margin: 0 0 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.pin-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 120px;
+}
+
+.pin-row {
+  margin: 0 0 6px;
+}
+
+.pin-link {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+
+.pin-link:hover {
+  border-color: #9fb5ab;
+  background: #f0f6f3;
+}
+
+.pin-favicon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  object-fit: contain;
+  background: #eef2ef;
+}
+
+.pin-favicon.placeholder {
+  display: block;
+}
+
+.pin-text {
+  min-width: 0;
+}
+
+.pin-title {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pin-host {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pin-visits {
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.pins-empty {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.list-footer {
+  flex-shrink: 0;
+  padding: 10px 0 12px;
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+  position: sticky;
+  bottom: 0;
+}
+
+.list-filter {
+  margin: 0;
+}
+
+.loading,
+.setup {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+}
+
+.loading-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.setup-text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #3a433e;
+}
+
+.setup-actions {
+  display: grid;
+  gap: 8px;
+}
+
+.btn-settings,
+.btn-dashboard {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.btn-settings {
+  border: 1px solid #143d34;
+  background: var(--brand);
+  color: #f5faf8;
+}
+
+.btn-settings:hover {
+  filter: brightness(1.05);
+}
+
+.btn-dashboard {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #143d34;
+}
+
+button.btn-dashboard {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-dashboard:hover {
+  background: #f0f4f1;
+}
+
+[hidden] {
+  display: none !important;
+}

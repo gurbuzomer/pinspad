@@ -2,10 +2,9 @@
   "manifest_version": 3,
   "name": "PinsPad",
   "description": "Save the current tab to your PinsPad collection with one click.",
-  "version": "1.0.0",
+  "version": "1.2.3",
   "action": {
-    "default_title": "Save to PinsPad",
-    "default_popup": "popup.html",
+    "default_title": "PinsPad",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
@@ -13,7 +12,13 @@
     }
   },
   "options_page": "options.html",
-  "permissions": ["activeTab", "storage"],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "tabs", "storage", "bookmarks", "sidePanel"],
   "host_permissions": ["https://pinspad.com/*"],
   "icons": {
     "16": "icons/icon16.png",

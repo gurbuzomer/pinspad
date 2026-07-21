@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Import bookmarks — PinsPad</title>
+  <link rel="stylesheet" href="import.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand-wrap">
+      <strong class="brand">PinsPad</strong>
+      <span class="subtitle">Import bookmarks</span>
+    </div>
+    <nav class="top-nav">
+      <a data-pinspad-dashboard target="_blank" rel="noopener noreferrer">Dashboard</a>
+      <a href="options.html">Settings</a>
+    </nav>
+  </header>
+
+  <section id="loading" class="panel">
+    <p>Loading Chrome bookmarks…</p>
+  </section>
+
+  <section id="errorPanel" class="panel err" hidden>
+    <p id="errorText"></p>
+    <p><a href="options.html">Open Settings</a></p>
+  </section>
+
+  <main id="main" hidden>
+    <div class="toolbar panel">
+      <div class="toolbar-row">
+        <input type="search" id="filter" placeholder="Filter by title or URL…" autocomplete="off">
+        <span id="counts" class="counts"></span>
+      </div>
+      <div class="toolbar-row">
+        <label class="inline-check">
+          <input type="checkbox" id="selectAll">
+          <span>Select all (visible)</span>
+        </label>
+        <label class="bulk-cat">
+          <span>Category for selected</span>
+          <select id="bulkCategory"></select>
+        </label>
+        <button type="button" id="applyBulk" class="btn-secondary">Apply</button>
+      </div>
+    </div>
+
+    <ul id="list" class="bookmark-list" role="list"></ul>
+
+    <footer class="import-bar">
+      <p id="importStatus" class="import-status" aria-live="polite"></p>
+      <button type="button" id="importBtn" disabled>Import to PinsPad</button>
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="api-client.js"></script>
+  <script src="import.js"></script>
+</body>
+</html>

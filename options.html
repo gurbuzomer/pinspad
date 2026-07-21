@@ -37,13 +37,46 @@
     .ok { color: #1f5c4d; }
     .err { color: #a33b2d; }
     .hint { color: #6b756f; font-size: 0.9rem; }
+    .top-links { margin: 0 0 0.5rem; font-size: 0.95rem; }
+    .top-links a { color: #1f5c4d; font-weight: 600; text-decoration: none; }
+    .top-links a:hover { text-decoration: underline; }
+    .api-help {
+      margin-top: 2rem;
+      padding: 1rem 1.1rem;
+      background: #f7faf8;
+      border: 1px solid #c9d2cc;
+      border-radius: 10px;
+    }
+    .api-help-title {
+      margin: 0 0 0.5rem;
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      color: #143d34;
+    }
+    .api-help p {
+      margin: 0 0 0.85rem;
+    }
+    .btn-dashboard-cta {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      font: inherit;
+      font-weight: 600;
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #143d34;
+      background: #1f5c4d;
+      color: #f5faf8;
+    }
+    .btn-dashboard-cta:hover {
+      filter: brightness(1.05);
+    }
   </style>
 </head>
 <body>
   <h1>PinsPad</h1>
   <p class="hint">
-    Create an API token in PinsPad → Settings, then paste it here.
-    The extension connects to <code>pinspad.com</code>.
+    Paste your API token below. The extension connects to <code>pinspad.com</code>.
   </p>
   <form id="optionsForm">
     <label>
@@ -56,6 +89,24 @@
     </div>
     <p id="status"></p>
   </form>
+  <p class="hint" style="margin-top: 1.25rem;">
+    <a href="import.html">Import Chrome bookmarks</a> — pick sites and categories before saving to PinsPad.
+  </p>
+
+  <section class="api-help" aria-labelledby="apiHelpTitle">
+    <h2 id="apiHelpTitle" class="api-help-title">Need an API token?</h2>
+    <p class="hint">
+      Open the PinsPad dashboard, sign in, then open your account menu → <strong>Extension &amp; API</strong>.
+      Create an API token, copy it, and paste it in the field above.
+    </p>
+    <a
+      href="https://pinspad.com/"
+      data-pinspad-dashboard
+      class="btn-dashboard-cta"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Go to dashboard for API key</a>
+  </section>
   <script src="config.js"></script>
   <script src="options.js"></script>
 </body>

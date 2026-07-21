@@ -1,5 +1,7 @@
 const statusEl = document.getElementById('status');
 
+wirePinsPadDashboardLinks();
+
 function setStatus(text, ok) {
   statusEl.textContent = text;
   statusEl.className = ok ? 'ok' : 'err';
